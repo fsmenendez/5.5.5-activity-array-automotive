@@ -2,71 +2,40 @@
 const VehicleModule = require("./vehicleBaseClass")
 
 //this shows how to call from this module...
-let v = new VehicleModule.Vehicle("Mercury", "Sedan", "1965", "color", "mileage");
-console.log(v.make)
+//let v = new VehicleModule.Vehicle("Mercury", "Sedan", "1965", "color", "mileage");
+//console.log(v.make)
 
 
-//After you write the derived Car class, you should test it out.
-
-//Note: You can code your derived Car class here or make a file named index.js and do it there.
-
-
-//TO DO: Code the Car subclass here or in index.js file, i.e. class Car extends Vehicle ...
-
-class Car extends VehicleModule {
+class Car extends Vehicle {
     constructor(make, model, year, color, mileage, maximumPassengers, passengers, numberOfWheels, maximumSpeed, fuel, scheduleService){
         super(make, model, year, color, mileage);
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.color = color;
-        this.mileage = mileage;
         this.maximumPassengers = maximumPassengers;
         this.passengers = passengers;
         this.numberOfWheels = numberOfWheels;
         this.maximumSpeed = maximumSpeed;
         this.fuel = fuel;
-        this.scheduleService = scheduleService
+        this.scheduleService = scheduleService;
     }
 
     loadPassenger(num){
         if(this.passengers < this.maximumPassengers){
-            this.passengers += 1;
+        	this.passengers += num;
+        	console.log('the car has ' + this.passengers + ' passengers.')
+        } else {
+        		console.log('No more room in the car.')
         }
     }
 
-    //START METHOD INHERITED. NO NEED TO ADD
+    //START METHOD INHERITED
 
-    serviceCheck(mileage){
+    serviceCheck(){
         if(this.mileage > 30000){
             this.scheduleservice = true
+            console.log('Service needed.')
+        } else {
+        		console.log('No service needed')
         }
     }
 }
 
-const testCar = new Car("Mercury", "Sedan", "1965", "red", "15000")
-console.log(testCar)
-
-
-
-
-
-
-
-
-
-
-
-
-
-//TO DO: Creating Instances and Testing Them
-
-
-
-//You can use the same instance "v" of the Vehicle class above for the base class.
-
-
-
-
-
-//Create at least two new instances of the Car class and test them here:
+const testCar = new Car("Mercury", "Sedan", "1965", "color", "15000", 0, 0, 4, 160, 100, false)
