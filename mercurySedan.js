@@ -13,6 +13,41 @@ console.log(v.make)
 
 //TO DO: Code the Car subclass here or in index.js file, i.e. class Car extends Vehicle ...
 
+class Car extends VehicleModule {
+    constructor(make, model, year, color, mileage, maximumPassengers, passengers, numberOfWheels, maximumSpeed, fuel, scheduleService){
+        super(make, model, year, color, mileage);
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.mileage = mileage;
+        this.maximumPassengers = maximumPassengers;
+        this.passengers = passengers;
+        this.numberOfWheels = numberOfWheels;
+        this.maximumSpeed = maximumSpeed;
+        this.fuel = fuel;
+        this.scheduleService = scheduleService
+    }
+
+    loadPassenger(num){
+        if(this.passengers < this.maximumPassengers){
+            this.passengers += 1;
+        }
+    }
+
+    //START METHOD INHERITED. NO NEED TO ADD
+
+    serviceCheck(mileage){
+        if(this.mileage > 30000){
+            this.scheduleservice = true
+        }
+    }
+}
+
+const testCar = new Car("Mercury", "Sedan", "1965", "red", "15000")
+console.log(testCar)
+
+
 
 
 
@@ -25,6 +60,8 @@ console.log(v.make)
 
 
 //TO DO: Creating Instances and Testing Them
+
+
 
 //You can use the same instance "v" of the Vehicle class above for the base class.
 
