@@ -7,7 +7,7 @@ const VehicleModule = require("./vehicleBaseClass")
 
 
 class Car extends Vehicle {
-    constructor(make, model, year, color, mileage){ // The solution looks like it wants the car class to be specific to the sedan, but i interpreted it differently and made it so that you add the properties later. Probably not efficient but i would love to hear feedback on it.
+    constructor(make, model, year, color, mileage){ // The solution looks like it wants the car class to be specific to the sedan, but i interpreted it differently and made it so that you add the properties later. Probably not efficient so any feedback is appreciated.
         super(make, model, year, color, mileage);
         this.maximumPassengers;
         this.passengers;
